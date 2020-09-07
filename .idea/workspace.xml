@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1202b0d-38a4-423a-ac2b-09057e20f934" name="Default Changelist" comment="first-commit">
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/.idea/Rest-auth.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/bin/www" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/controllers/auth/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/controllers/auth/password.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/controllers/auth/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/controllers/auth/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/public/stylesheets/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/routes/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rest-auth/routes/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../editor-tool/.idea/editor-tool.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../editor-tool/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../editor-tool/.idea/libraries/bootstrap.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../editor-tool/.idea/libraries/jquery_3_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../editor-tool/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../editor-tool/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/.idea/photoframe-editor.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/browserconfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/css/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/TOC.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/css.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/extend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/faq.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/html.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/js.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/misc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/doc/usage.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/humans.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/img/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/js/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/js/vendor/modernizr-3.11.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/site.webmanifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/tile-wide.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe-editor/tile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/abort.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/prev.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/design-tool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-js/fire.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-js/plato.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-js/prev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../photoframe/pages/size-select.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/editor.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/editor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/.idea/photoframe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/.idea/photoframe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/css/custom/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/css/custom/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/css/custom/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/css/custom/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/css/custom/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/css/custom/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/css/custom/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/css/custom/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/css/custom/step.css" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/css/custom/step.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/css/custom/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/css/custom/test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/pages/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/pages/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/pages/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/pages/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../photoframe/pages/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/photoFrame/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/photoFrame/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/photoFrame/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/photoFrame/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/photoFrame/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../photoframe/photoframe.zip" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1gc5dqMN9ITUXUXFc2c9vLlaU3i" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/external-libraries" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1202b0d-38a4-423a-ac2b-09057e20f934" name="Default Changelist" comment="" />
+      <created>1598401129433</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598401129433</updated>
+      <workItem from="1598401130931" duration="19411000" />
+      <workItem from="1598425654627" duration="21000" />
+      <workItem from="1598445021357" duration="2711000" />
+      <workItem from="1598490463693" duration="1983000" />
+    </task>
+    <task id="LOCAL-00001" summary="first-commit">
+      <created>1598402017316</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598402017316</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first-commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first-commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="140" y="78" width="734" height="635" key="#Inspections" timestamp="1598406635652">
+      <screen x="0" y="28" width="1024" height="740" />
+    </state>
+    <state x="140" y="78" width="734" height="635" key="#Inspections/0.28.1024.740@0.28.1024.740" timestamp="1598406635652" />
+    <state x="160" y="140" width="693" height="511" key="FileChooserDialogImpl" timestamp="1598425678283">
+      <screen x="0" y="28" width="1024" height="740" />
+    </state>
+    <state x="160" y="140" width="693" height="511" key="FileChooserDialogImpl/0.28.1024.740@0.28.1024.740" timestamp="1598425678283" />
+    <state x="30" y="33" key="SettingsEditor" timestamp="1598411248915">
+      <screen x="0" y="28" width="1024" height="740" />
+    </state>
+    <state x="30" y="33" key="SettingsEditor/0.28.1024.740@0.28.1024.740" timestamp="1598411248915" />
+    <state x="244" y="312" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598401822256">
+      <screen x="0" y="28" width="1024" height="740" />
+    </state>
+    <state x="244" y="312" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.28.1024.740@0.28.1024.740" timestamp="1598401822256" />
+    <state x="0" y="28" width="637" height="740" key="find.popup" timestamp="1598401600931">
+      <screen x="0" y="28" width="1024" height="740" />
+    </state>
+    <state x="0" y="28" width="637" height="740" key="find.popup/0.28.1024.740@0.28.1024.740" timestamp="1598401600931" />
+  </component>
+</project>

@@ -1,0 +1,356 @@
+* {
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+body {
+    box-sizing: border-box;
+    /*background : #ffffff url(https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/stage-bg.jpg) top center repeat-y !important;*/
+    background-color: #e8ebee;
+}
+
+/* .option */
+.modal {
+    min-width: 40% !important;
+    min-height: 60vh !important;*/
+    padding: 0 !important;
+}
+
+.site-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.top-bar {
+    background-color: #212529;
+    padding: 10px 10px;
+    height: 56px;
+}
+
+.top-bar-actions {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar-actions .v1 , .top-bar-actions .v3{
+    width: max-content;
+    padding:4px 16px;
+    border-radius: 12px;
+    margin :0 6px;
+    outline: none;
+    font-weight: 500;
+    border : none;
+}
+
+.heading {
+    font-size: 2rem;
+    color: white;
+    font-family : 'Ubuntu' , sans-serif;
+    font-weight: 600;
+}
+
+.work-area-section {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.tool-bar-container {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 56px;
+    width: max-content;
+    height:100%;
+    padding: 0;
+    background-color: #313334;
+}
+
+.tool-bar {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    background-color: white;  
+    padding:0; 
+    margin:auto;
+    position: relative;
+    background-color: #313334;
+}
+
+
+.tool-bar-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding:10px 10px;
+    cursor: pointer;
+    font-size: 0.6rem;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    transition: all 10ms ease;
+    color: white;
+}
+
+
+.tool-bar-item:hover {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+
+.tool-bar-item i {
+    margin:4px 0px;
+    font-size: 1.6rem;
+}
+
+
+.side-flex {
+    width: 360px;
+    position: absolute;
+    right: -360px;
+    top: 0;
+    bottom: 0;
+   /* height: 200px;*/
+    background-color: white;    
+}
+
+.side-bar {
+    padding: 0;
+    position: fixed;
+    float: left;
+    top: 56px;
+    height: 100%;
+    min-width: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.step-options-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.step-options-item {
+    min-height: 50px;
+    min-width: 50px:
+    padding : 5px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+
+.step-options-item h3 {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+    padding: 0 6px; 
+    text-transform: capitalize;
+    width: 100%;
+    text-align: center;
+}
+
+.input-container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted gray;
+    margin:auto;
+    border-radius: 6px;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0;
+}
+
+.input-container:hover {
+    opacity: 0.8;
+}
+
+.input-container input{
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.draggable-container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.draggable-container img {
+    width: 100px;
+    height: 100px;
+    margin : 10px ;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.option-contents {
+    width: 350px;
+    height: 100%;
+    min-height: 600px;
+    background-color: white;
+    padding: 20px 0;
+    display: block;
+}
+
+.option-contents h1 {
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+}
+
+.container-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    padding: 0;
+    grid-template-columns: 260px 1fr;
+    grid-auto-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-play-area {
+    display: block;
+    margin: auto;
+    width: max-content;
+    height: max-content;
+    padding: 100px 100px 60px 200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.main-container {
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 800px;
+    max-height: 800px;
+    display: block;
+    position: relative;
+    transition: all 200ms ease;
+    -webkit-box-shadow: -1px -1px 74px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -1px 74px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px -1px 74px 0px rgba(0,0,0,0.75);
+}
+
+.main-canvas , .border-canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.border-canvas-container  {
+    position: absolute !important;
+    padding: 0;
+    margin: 0;
+}
+
+.border-canvas-container {
+    position: absolute !important;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/*Dont nfjvnj*/
+.product-model-tab {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin : 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-tab-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+
+.product-tab-bar li {
+    min-width: 100px;
+    padding: 10px ;
+    cursor: pointer;
+    text-align: center;
+}
+
+.product-tab-bar li:hover {
+    background-color: gray;
+}
+
+
+.product-list {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    list-style: none;
+    padding:10px;
+}
+
+
+.product-list li {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border : 1px solid gray;
+}
+
+.product-list li:hover {
+    background-color: gray;
+}
+
+
+
+.generic-canvas-container {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
