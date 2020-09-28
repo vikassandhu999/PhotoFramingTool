@@ -17,6 +17,7 @@ function Canvas(params) {
         borderArea : 0 , 
         borderFill : '#ffffff' , 
         filter: 'grayscale' , 
+        defaultImageData : null , 
     };
 
     this.params = $.extend(this.params , params);
@@ -62,6 +63,8 @@ function Canvas(params) {
 
         if(params.imageUrl) {
             this.addImageObject(params.imageUrl);
+        } else {
+            this.addImageObject(params.defaultImageData);
         }
     }
 
@@ -118,6 +121,12 @@ function Canvas(params) {
             e.preventDefault();
         });
 
+
+        //if(!params.imageUrl && params.defaultImageData) {
+          this.addImageObject(params.defaultImageData);
+          console.log("\n\n\n\n\vbdjcmaskdvnbfkvmaksvndf\n\n\n\n\n\n" , params.defaultImageData);
+        //}
+           
         if(params.canvas) {
             params.canvas.on('object:moving' , this.mainObjectMove);
         }

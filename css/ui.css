@@ -172,6 +172,14 @@ body {
 }
 
 
+.color-picker-container {
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: 16;
+}
+
+
 .nav-rail-drawer {
 	width: 360px;
 	height: 100%;
@@ -186,11 +194,12 @@ body {
 
 .rail-drawer-container {
 	width: 100%;
-	height: max-content;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	padding: 0;
 	margin: auto;
+	overflow-y: scroll;
 }
 
 
@@ -319,4 +328,112 @@ body {
 	display: block;
 	padding: 0;
 	background-color: red;
+}
+
+.app_navbar {
+	font-size: 20px;
+	height : 30px;
+	box-sizing:  border-box;
+	transition: all 200ms ease;
+}
+
+
+.tile {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: white;
+	text-align:left;
+	background-color:  #e8ebee;
+	font-size: 1rem;
+}
+
+
+
+.u-list {
+	width: 100%;
+	list-style: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	padding: 0 10px;
+}
+
+.u-list li {
+	width: 100%;
+	height: 150px;
+	border : 1px solid white;
+	background-color:  #e8ebee;
+	justify-content: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.u-list li:hover {
+	border : 1px solid black;
+}
+
+
+
+.modal {
+	position: fixed;
+	z-index: 900;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;	
+}
+
+.modal-container {
+	background-color:transparent;
+	width: 100%;
+	height: 100%;
+	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	position: relative;
+}
+
+
+.modal-close {
+	position: absolute;
+	right: 40px;
+	top: 20px;
+	font-size: 2rem;
+	color: white;
+}
+
+.modal-wrapper {
+	max-width: 90vw;
+	max-height: 90vh;
+	background-color: white;
+	display: block;
+}
+
+.room-view-content {
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+.room_view_image {
+	max-width: 900px;
+	display: block;
+	height: auto;
+}
+
+.print_canvas_image {
+	position: absolute;
+	top: 20px;
+	left: 300px;
+	width: 200px;
+	z-index: 901;
 }

@@ -1,18 +1,37 @@
+var SIZES = [
+    [6,8] ,
+    [8,8] ,
+    [8,12] ,
+    [10,10] ,
+    [10,12] ,
+    [11,14] ,
+    [12,12] ,
+    [12,15] ,
+    [12,18] ,
+    [16,20] ,
+    [16,24] ,
+    [20,24] ,
+    [20,30] ,
+    [30,20]
+];
+
+
 /* SuperType */
 function PrintTool(config) {
     /** Configuration Object for Tool */
     this.config = {
-        type : 'collage_print' , 
+        type : 'single_print' , 
         productType : 'canvas' , 
         calculatedPrice : 0,
         jsonData : null , 
         pxPerInch : 10 ,
+        defaultImageData : null , 
         windowWidth : $(window).width() , 
         maxWidthRatio : 60 , 
         finalWidth : 0 , 
         finalHeight : 0 ,
-        SizeX : 30 , 
-        SizeY : 30 ,  
+        SizeX : 12 , 
+        SizeY : 20 ,  
     };
 
     /**  */
@@ -35,12 +54,19 @@ function PrintTool(config) {
 
         if(this.locals.instance)
             this.locals.instance.Init();   
+
+
+        this.renderOptions();
     }
 
 
     this.attachEvents = () => {
+        let args = this.config;
 
         $(window).resize(this.onWindowResize);
+
+
+        $(document).on('click' , '#room-view' , this.generateRoomView);
 
         $(document).on('click' , '#size-select > li' , (e) => {
             this.resizeCanvas($(e.target).attr('value'));
@@ -60,6 +86,24 @@ function PrintTool(config) {
         $(document).on('dragstart' , '.draggable-image' , (e) => {
             e.originalEvent.dataTransfer.setData("text", e.target.id);
         });        
+
+       
+        let img =  $('#default-image-placeholder');
+        let imgObj = new Image();
+        imgObj.crossOrigin = 'Anonymous';
+        imgObj.onload = function(oImg) {
+            var tempCanvas = document.createElement('CANVAS');
+            var tempCtx = tempCanvas.getContext('2d');
+            var height = tempCanvas.height = this.naturalHeight;
+            var width = tempCanvas.width = this.naturalWidth;
+            tempCtx.drawImage(this, 0, 0);
+            var dataURL = tempCanvas.toDataURL();
+            console.log(dataURL);
+            args.defaultImageData = dataURL;
+        };
+
+
+        imgObj.src = img.attr('src');
     }
 
 
@@ -77,24 +121,62 @@ function PrintTool(config) {
             /* send to the server */
     }
 
+
     this.fillContent = (option) => {
         this.locals.options.forEach((id) => { 
             $('#'+id+'-contents').css({display : (id === option) ? 'block' : 'none'});
         });
     }
 
+
+    this.renderOptions = () => {
+        let elements = "";
+       for (let i = 0; i <=  SIZES.length - 1; i++) {
+            elements += `
+                <li value = "${SIZES[i][0]}x${SIZES[i][1]}">${SIZES[i][0]}x${SIZES[i][1]}</li>
+            `;
+       }
+        $('#size-select').html(elements);
+    }
+
     this.onImageUpload = (e) => {
         e.preventDefault();
-        let file = e.target.files[0];
+        
+        let formData = new FormData();
+        var files = e.target.files[0];
+        formData.append('image',files);
+        setLoader();
+
+
+        $.ajax({
+            url: '<url>',
+            type: 'post',
+            data: formData,
+            contentType: false,
+            processData: false,
+            error: function (xhr, ajaxOptions, thrownError) {
+                rmLoader();
+               // alert('Error While Uplaoding the image');
+            },
+            success: function(jsonReply) {
+                if (!$j.isEmptyObject(jsonReply) ) {
+                    if(jsonReply.imageUrl) {
+                      insertImageElement(jsonReply.imageUrl);
+                    }
+                } else {
+                    alert('Server Error, Unable to upload image');
+                }
+                rmLoader();
+            }
+
+        });
+
         let reader = new FileReader();
         reader.onload = (f) => {
             let data = f.target.result;
-            let iuid = "img-"+ Date.now();
-            let imageTemplate = `<img draggable="true" class = "draggable-image" id = ${iuid} src = ${data} alt = "Image Content"/>`;
-            $('#draggable-container').append(imageTemplate);
-            $('#image-upload').files = null;
+            insertImageElement(data);
         }
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(files);
     }
 
     /** Create Instance of SubType according to 'type' */
@@ -112,6 +194,49 @@ function PrintTool(config) {
                 // Throw Error
                 return;
         }
+    }
+
+    this.generateRoomView = () => {
+        setLoader();
+        openModal();
+                  
+            let roomViewTemplate = `
+                   <div id = "room_view_content" class="room-view-content">
+                        <img class = 'room_view_image' src = "./media/room_view.jpg"/>
+                    </div>`;
+
+                    //canvas-preview
+            $(".modal-wrapper").html(roomViewTemplate);
+
+                setTimeout(() => {
+
+                        let base = 160;
+                let scale = 0;
+
+                if(this.config.SizeY > this.config.SizeX) {
+                    scale = (base / this.config.finalHeight);
+                } else {
+                    scale = (base / this.config.finalWidth);
+                }
+
+                let left = $('#room_view_content').width() / 3;
+
+                let height = Math.round((this.config.finalHeight) * scale);
+                let width = Math.round((this.config.finalWidth) * scale);
+
+
+               html2canvas($('.main-container'), {
+                    timeout : 600,
+                    onrendered: function (canhtml) {
+                        var previewDataUrl = canhtml.toDataURL("image/jpg");
+                      
+                       $("#room_view_content").append(`<img class = 'print_canvas_image' style = 'left : ${left}px;height : ${height}px; width : ${width}px;'  src='${previewDataUrl}' />`);
+                    }
+                });
+               rmLoader();
+
+
+            } , 1000);
     }
 
     /** Calculate maxWidthRatio for different screen sizes */
@@ -163,4 +288,19 @@ function PrintTool(config) {
         this.config.SizeY = parseInt(Size[1]);
         this.onWindowResize();
     }
+}
+
+
+
+//Helpers
+function insertImageElement(imageUrl) {
+    let iuid = "img-"+ Date.now() + Math.floor(Math.random() * 10000);
+    let imageTemplate = `
+        <div> 
+            <img draggable="true" class = "draggable-image" id = ${iuid} src = ${imageUrl} alt = "Image Content"/>
+            <a><i class="fas fa-trash-alt"></i></a>
+        </div>
+    `;
+    $('#draggable-container').append(imageTemplate);
+    $('#image-upload').files = null;
 }

@@ -16,7 +16,7 @@ State of the app ->
 		'single_print' : 
 			canvases : []
 			imageUrls : [] , 
-			borderArea : 0 , 
+			borderArea : 0 , f
 			borderLine : 0.75 , // 0.75 , 1.5 , 0
 			borderType : 'mirror' , // wrap , mirror , none
 			commonId :  1 , 
@@ -40,5 +40,48 @@ State of the app ->
 				width : 
 				height : 
 				imgUrl : 
-				canvas : 
-				imageObject : 
+
+curl -i --request POST \
+--url https://api.sendgrid.com/v3/mail/send \
+--header 'Authorization: Bearer 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 ' \
+--header 'Content-Type: application/json' \
+--data '{"personalizations": [{"to": [{"email": "vikassandhu999@gmail.com"}]}],"from": {"email": "sendeexampexample@example.com"},"subject": "Hello, World!","content": [{"type": "text/plain", "value": "Howdy!"}]}'
+
+
+//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 
+
+
+function() {
+	const header = Function() {
+		return (
+			<h1>Sandhu is here Boi</h1>
+		)
+	}
+}
+
+
+
+function Header = () => {
+	const [count , setCount] = useState<Number>(0);
+	return (
+		<div>
+			<h1>{count}</h1>
+			<button onClick = {() => setCount(count+1);}>+</button>
+			<button onClick = {() => setCount(count-1);}>-</button>
+		</div>
+	);
+}
+
+const HomePageView = ({ auth }) => {
+	return (
+		(auth.isAuthenicated) ? "You are logged in!!!!" : "Please Login to proceed";
+	);
+}
+
+
+/*
+
+	
+
+
+*/

@@ -1,94 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Print Editor Tool</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!--    Font Awesome-->
-    <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-xVVam1KS4+Qt2OrFa+VdRUoXygyKIuNWUUUBZYv+n27STsJ7oDOHJgfF0bNKLMJF" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-xVVam1KS4+Qt2OrFa+VdRUoXygyKIuNWUUUBZYv+n27STsJ7oDOHJgfF0bNKLMJF" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
+	<link rel="stylesheet" href="./css/ui.css">
     <link rel="stylesheet" href="./css/editor.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="./css/loader.css">
+	<title>PhotoFrame Editor</title>
 </head>
 <body>
-    
-    <div class="site-container d-flex flex-column">
-         
-          <!-- TOP Bar -->
-          <div class="top-bar">
-              <div class="d-flex justify-content-between">
-                  <div class="d-flex justify-content-start">
-
-                     <h1 class="heading"><i class="fal fa-images"></i> PhotoFrame</h1>
-                  </div>
-                 
-                  <div class="top-bar-actions">
-                    <button class="v1">Room View</button> 
-                    <button class="v1">View PhotoFrame</button>
-                    <button class="v3" id = "add-to-cart"> Rs. 299 | Add to Cart</button>
-                  </div>
-              </div>
-          </div>
+	<div class="app-container">
 
 
-          <div class="work-area-section">
+		<div id = "modal" class="modal">
+			<div class="modal-container">
+				<div id = "modal-wrapper" class="modal-wrapper">
+					
+				</div>
+				<a href="#" class="modal-close" onclick="rmModal()"><i class="fal fa-times"></i></a>
+			</div>
+		</div>
 
-               <div class="tool-bar-container">
-                  <div class="tool-bar">
-                    <div id = "product-op" class="tool-bar-item">
-                      <i class="fal fa-images"></i>
-                      Product
-                    </div>
-                    <div id="size-op" class="tool-bar-item">
-                       <i class="far fa-expand-wide"></i>
-                      Size
-                    </div>
-                     <div id="upload-op" class="tool-bar-item">
-                       <i class="far fa-upload"></i>
-                        Upload
-                    </div>
-                    <div id="border-op" class="tool-bar-item">
-                       <i class="fal fa-crop-alt"></i>
-                       Border
-                    </div>
-                    <div id="finish-op" class="tool-bar-item">
-                       <i class="fal fa-crop-alt"></i>
-                        Finish 
-                    </div>
+		<!-- Loader -->
+		<div id = "loader" class="loader">
+			<div class="loadingio-spinner-spinner-j0pv77070tk"><div class="ldio-dgirkvgxblp">
+				<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+			</div>
+		</div>
 
-                   <div class="side-flex" id = "side-bar-flex">
-                          <div id="product-contents" class="option-contents">
-                              <ul id = "product-select" class="product-list">
-                                <li value="single_print"><i class="far fa-expand-wide"></i> Single Print</li>
-                                <li value="collage_print"><i class="far fa-expand-wide"></i> Collage Print</li>
-                                <li value="collage_print"><i class="far fa-expand-wide"></i> Hexagonal Print</li>
-                                <li value="collage_print"><i class="far fa-expand-wide"></i> Split Print</li>
-                                <li value="collage_print"><i class="far fa-expand-wide"></i> Mosiac Print</li>
-                              </ul>
-                          </div>
+		<!-- Defualt Image Placeholder -->
+		<img id = "default-image-placeholder" src="media/image-placeholder.png" alt=""  style="display: none;" />
 
-                          <div id="size-contents" class="option-contents">
-                              <ul id = "size-select" class="product-list">
-                                <li value="6x8">6*8</li>
-                                <li value="8x8">8*8</li>
-                                <li value="8x10">8*10</li>
-                                <li value="10x10">10*10</li>
-                                <li value="10x12">10*12</li>
-                                <li value="11x14">11*14</li>
-                                <li value="12x12">12*12</li>
-                                <li value="12x15">12*15</li>
-                                <li value="12x18">12*18</li>
-                                <li value="16x20">16*20</li>
-                                <li value="16x24">16*24</li>
-                                <li value="20x24">20*24</li>
-                                <li value="20x30">20*30</li>
-                                <li value="30x20">30*20</li>
-                              </ul>
-                          </div>
 
-                            <!--  -->
-                          <div id = "upload-contents" class="option-contents">
+		<!-- Overlay -->
+		<div class="full-display-overlay" id = "full-display-overlay"></div>
+
+		<!-- Nav Drawer -->
+		<div id = "nav-drawer-0" class="nav-drawer">
+			<div class="nav-container">
+				<a href="#" class="nav-close-button" id = "nav-close-button"> <i class="far fa-times"></i> </a>
+				<h1>Products</h1>
+				<ul class="nav-options">
+					<li><a href="?=single-print">Single Canvas</a></li>
+					<li><a href="?=collage-photo">Collage Photo</a></li>
+					<li><a href="?=hexagonal-print">Hexagonal Print</a></li>
+					<li><a href="?=split-photo">Split Photo</a></li>
+					<li><a href="?=mosaic-print">Mosaic Print</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Nav Rail -->
+		<div class="nav-rail">
+			<div class="nav-rail-container">
+				<div class="nav-rail-list">
+					<a id = "op-upload-btn" class="nav-rail-option">
+						 <i class="fal fa-upload"></i>
+						 Upload
+					</a>
+					<!-- <a id = "op-layout-btn" class="nav-rail-option">
+						 <i class="far fa-box"></i> 
+						 Layout
+					</a>
+ -->				<a id = "op-specs-btn" class="nav-rail-option">
+						 <i class="far fa-expand-wide"></i>
+						 Specs
+					</a>
+					<a id = "op-border-btn" class="nav-rail-option">
+						 <i class="fal fa-crop-alt"></i>
+						 Border
+					</a>
+					<a id = "op-options-btn" class="nav-rail-option">
+						 <i class="far fa-cog"></i>
+						 Options
+					</a>
+				</div>
+
+				<div class="color-picker-container">
+					<span id="color-picker"></span>
+				</div>
+
+
+				<!-- Drawer -->
+				<div class="nav-rail-drawer">
+					<div class="rail-drawer-container">
+
+						  <div id = "upload-contents" class="option-contents">
                                  <h1>Upload Images</h1>
                                  <div id ="draggable-container" class="draggable-container">
                                    
@@ -97,59 +97,84 @@
                                      <i class="far fa-upload"></i>
                                      <input type="file" name="image-upload" id = "image-upload" />
                                  </div>
-                          </div> 
-
-                          <div id="border-contents" class="option-contents">
-                            Border
-                          </div>
-
-                          <div id="finish-contents" class="option-contents">
-                            Finish
                           </div>
 
 
-                   </div>
-
-                 </div>
-              </div>
-
-              <!-- Empty Element -->
-              <div></div>
-               
-
-              <div class="container-grid">
-             
-                  <div></div>
-
-                  <!-- Main Canvas Container -->
-                   <div class="main-play-area">
-                      <div class="container">
-                          <div id="main-container" class="main-container">
-
+                          <div id = "specs-contents" class = "option-contents">
+                          		<div class = "tile">Size</div>
+                          		<ul id = "size-select" class="u-list">
+                               	</ul>
                           </div>
-                      </div>
-                   </div>
-              </div>
-          </div>
-    
-  </div>
 
+
+                          <div id = "border-contents" class = "option-contents">
+                          		<div class = "tile">Border</div>
+                          		<ul id = "border-select" class="u-list">
+                          			<li value = "color">
+                          				Color
+                          			</li>
+                          			<li value = "wrap">Image Wrap</li>
+                          			<li value = "mirror">Mirror Wrap</li>
+                          		</ul>
+                          </div>
+
+					</div>
+				</div>
+
+		    </div>
+		</div>
+
+		<!-- App Wrapper -->
+		<div class="app-wrapper">
+			<!-- App bar -->
+			<div class="app-bar">
+				<div class="app-bar-s1">
+					<a href="#" id = "nav-open-button"><i class="fal fa-bars"></i></a>
+					<h1>PhotoFrame</h1>
+				</div>
+				
+				<div class="app-bar-s2">
+					<a class="b1" id = "room-view" >Room View</a>
+					<a class="b1" id = "add-to-cart">Rs. 199 | Add to cart</a>
+				</div>
+			</div>
+
+
+			<!-- Main Play Area -->
+			<div class="main-play-area">
+				<!-- Dummy -->
+				<div class="dummy">
+				</div>
+				<!-- Editing Area -->
+				<div class="edit-area">
+					<!-- Main Canvas Container -->
+					<div class="canvas-preview">
+						<div  id="main-container" class="main-container">
+					
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
 </body>
-   <!-- ============================JavaScript============================== -->
+	<!-- JS  -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <!-- jQuery Modal -->
-  
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <script type="text/javascript" src="./external-libraries/fabric.js"></script>
+    CDN
+
+    <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
+
+	<script type="text/javascript" src = "./js/ui.js"></script>
+	<script type="text/javascript" src="./external-libraries/fabric.js"></script>
+	<script type="text/javascript" src="./external-libraries/html2canvas.js"></script>
+	<script type="text/javascript" src="./external-libraries/jpicker.js"></script>
+    <script type="text/javascript" src="./js/canvas.js"></script>
     <script type="text/javascript" src="./js/single-print.js"></script>
     <script type="text/javascript" src="./js/collage-print.js"></script>
     <script type="text/javascript" src="./js/design-tool.js"></script>
     <script type="text/javascript" src="./js/editor.js"></script>
-
 </html>
-
-
-
-  

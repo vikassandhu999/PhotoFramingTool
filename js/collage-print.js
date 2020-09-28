@@ -7,12 +7,14 @@ function CollagePrint(general , mainDiv) {
 	this.config = {
 		canvases : [] , 
 		imageUrls : [] , 
-        layout : [{ top : 0 , left : 0 , width : 100 , height : 50 } , { top : 0 , left : 50 , width : 50 , height : 50 } , { top : 50 , left : 0 , width : 50 , height : 50 } ,  { top : 50 , left : 50 , width : 50 , height : 50 }] , 
+        layout : [{ top : 0 , left : 0 , width : 50 , height : 50 } , { top : 0 , left : 50 , width : 50 , height : 50 } , { top : 50 , left : 0 , width : 50 , height : 50 } ,  { top : 50 , left : 50 , width : 50 , height : 50 }] , 
 		borderArea : 6 , 
 		commonId :  1 , 
 		jsonData : null ,
 	}
 	
+
+    console.log("Object : " , general);
 
 	/** Initialize Object */
 	this.Init = () => {
@@ -56,7 +58,16 @@ function CollagePrint(general , mainDiv) {
             pxWidth = (layout[i].width * argv.finalWidth)/100 , 
             pxHeight = (layout[i].height * argv.finalHeight)/100 ; 
 
-            args.canvases.push(new Canvas({canvasId : i ,top : pxtop , left : pxLeft , height : pxHeight , width : pxWidth , borderArea : args.borderArea}));
+            args.canvases.push(new Canvas(
+                {   canvasId : i ,
+                    top : pxtop , 
+                    left : pxLeft , 
+                    height : pxHeight , 
+                    width : pxWidth , 
+                    borderArea : args.borderArea ,
+                    defaultImageData : this.general.defaultImageData , 
+                }
+            ));
             args.canvases[i].create(mainDiv);
     }
 
