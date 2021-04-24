@@ -188,7 +188,7 @@ function PrintTool(config) {
                 this.locals.instance = new SinglePrint(this.config , this.locals.container);
                 return;
             case 'collage_print' : 
-                this.locals.instance = new CollagePrint(this.config , this.locals.container);
+               // this.locals.instance = new CollagePrint(this.config , this.locals.container);
                 return;
             default :
                 // Throw Error
@@ -289,7 +289,6 @@ function PrintTool(config) {
         this.onWindowResize();
     }
 }
-
 
 
 //Helpers

@@ -4,24 +4,114 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-xVVam1KS4+Qt2OrFa+VdRUoXygyKIuNWUUUBZYv+n27STsJ7oDOHJgfF0bNKLMJF" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css" integrity="sha512-QTQigm89ZvHzwoJ/NgJPghQPegLIwnXuOXWEdAjjOvpE9uaBGeI05+auj0RjYVr86gtMaBJRKi8hWZVsrVe/Ug==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.css" integrity="sha512-KuSX+43gVS5MEIJD2ewtrFPOHqC1PJnL8o2f5ciggPC0JUZ8XV0QXlfArO1mSzKkVFdRjsBDfrTU96C5SuRfqQ==" crossorigin="anonymous" />
 	<link rel="stylesheet" href="./css/ui.css">
     <link rel="stylesheet" href="./css/editor.css">
     <link rel="stylesheet" href="./css/loader.css">
-	<title>PhotoFrame Editor</title>
+	<title>PhotoFrame Editor (Canvas Wrap)</title>
 </head>
 <body>
 	<div class="app-container">
 
 
-		<div id = "modal" class="modal">
+		<div id = "modal3d" class="modal">
 			<div class="modal-container">
-				<div id = "modal-wrapper" class="modal-wrapper">
+				<div id = "modal-wrapper-3d" class="modal-wrapper">
 					
 				</div>
-				<a href="#" class="modal-close" onclick="rmModal()"><i class="fal fa-times"></i></a>
+				 <ul class="instructions-3d row">
+	                <li class="col-12">Scroll or Pinch - to Zoom in & out</li>
+	                <li class="col-12">Hold Click & Rotate to change view</li>
+	            </ul>
+				<a href="#" class="modal-close" id = "close-modal3d"><i class="fal fa-times"></i></a>
 			</div>
 		</div>
+
+
+		<div id = "modalroom" class="modal">
+			<div class="modal-container">
+				<div id = "modal-wrapper-room" class="modal-wrapper">
+					
+				</div>
+				<a href="#" class="modal-close" id = "close-modalroom"><i class="fal fa-times"></i></a>
+			</div>
+		</div>
+
+		<div id = "imageupload" class="modal">
+			<div class="modal-container">
+				<div id = "modal-wrapper-upload" class="modal-wrapper">
+					
+					<div class="edit-container">
+						<div class="upload-option-tab">
+									<a href="#" class="upload-option">
+										<i class="fas fa-tv"></i>
+										<span>
+											My Computer
+										</span>
+									</a>
+									<a href="#" class="upload-option">
+										<i class="far fa-images"></i>
+										<span>
+											Gallery
+										</span>
+									</a>
+									<a href="#" class="upload-option">
+										<i class="fab fa-instagram"></i>
+										<span>
+											Instagram
+										</span>
+									</a>
+									<a href="#" class="upload-option">
+										<i class="fab fa-facebook-f"></i>
+										<span>
+											Facebook
+										</span>
+									</a>
+					    </div>
+						<div class="row">
+							<div class="col-12 edit-top-bar">
+								<div class="album-tab">
+									<h3>Album Name</h3>
+								    <input type="text" placeholder="Party Ablum">
+								</div>
+								<div class="my-2">
+									<hr/>
+								</div>
+							</div>
+
+							<div class="col-12 tab-area-container">
+								<div id = "album-tab" class="ablum-area">
+									
+								</div>
+								<div id = "computer-tab" class="computer-area">
+									<div class="image-input-container">
+                                    	 <i class="far fa-plus"></i>
+                                    	 Add Image
+                                     <input type="file" name="image-upload" id = "image-upload" />
+                                 	</div>
+								</div>
+								<div id = "gallery-tab" class="gallery-area">
+									
+								</div>
+								<div id = "facebook-tab" class="facebook-area">
+									
+								</div>
+								<div id = "instagram-tab" class="instagram-area">
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+				</div>
+				<a href="#" class="modal-close" id = "close-imageupload"><i class="fal fa-times"></i></a>
+			</div>
+		</div>
+
+
 
 		<!-- Loader -->
 		<div id = "loader" class="loader">
@@ -61,14 +151,16 @@
 						 <i class="fal fa-upload"></i>
 						 Upload
 					</a>
-					<!-- <a id = "op-layout-btn" class="nav-rail-option">
-						 <i class="far fa-box"></i> 
-						 Layout
-					</a>
- -->				<a id = "op-specs-btn" class="nav-rail-option">
+      				<a id = "op-specs-btn" class="nav-rail-option">
 						 <i class="far fa-expand-wide"></i>
 						 Specs
 					</a>
+
+					<a id = "op-art-btn" class="nav-rail-option">
+						 <i class="far fa-expand-wide"></i>
+						 Art
+					</a>
+
 					<a id = "op-border-btn" class="nav-rail-option">
 						 <i class="fal fa-crop-alt"></i>
 						 Border
@@ -79,43 +171,261 @@
 					</a>
 				</div>
 
-				<div class="color-picker-container">
-					<span id="color-picker"></span>
-				</div>
-
-
 				<!-- Drawer -->
 				<div class="nav-rail-drawer">
 					<div class="rail-drawer-container">
 
 						  <div id = "upload-contents" class="option-contents">
-                                 <h1>Upload Images</h1>
-                                 <div id ="draggable-container" class="draggable-container">
+                                <!--  <h1>Upload Images</h1> -->
+                                
+                                 <div id="open-imageupload" class="input-container">
+                                     <i class="far fa-plus"></i>
+                                     Add Image
+                                 </div>
+
+                                  <div id ="draggable-container" class="draggable-container">
                                    
                                  </div>
-                                 <div class="input-container">
-                                     <i class="far fa-upload"></i>
-                                     <input type="file" name="image-upload" id = "image-upload" />
-                                 </div>
+                          </div>
+
+                          <div id = "art-contents" class="option-contents">
+
+                                <ul class="accodian">
+                          			<li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Stickers
+		                          			<i class="far fa-caret-down"></i>
+		                          		</a>
+		                          		<div class="inner">
+		                          			<ul id = "" class="u-list">
+		                          				<li>
+		                          					<span class="thumbnail">
+		                          						<img src = "https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/canvasprint-designtool/size75.jpg"/>
+		                          					</span>
+		                          					
+		                          				</li>
+                          						<li>
+		                          					<span class="thumbnail">
+		                          						<img src = "https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/canvasprint-designtool/size75.jpg"/>
+		                          					</span>
+		                          				
+		                          				</li>
+	                               			</ul>
+		                          		</div>
+                          				
+                          			</li>
+
+
+                          			<li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Emojis
+		                          			<i class="far fa-caret-down"></i>
+		                          		</a>
+		                          		<div class="inner">
+		                          			<ul id = "" class="u-list">
+		                          				<li>
+		                          					<span class="thumbnail">
+		                          						<img src = "https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/canvasprint-designtool/size75.jpg"/>
+		                          					</span>
+		                          					
+		                          				</li>
+                          						<li>
+		                          					<span class="thumbnail">
+		                          						<img src = "https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/canvasprint-designtool/size75.jpg"/>
+		                          					</span>
+		                          				
+		                          				</li>
+	                               			</ul>
+		                          		</div>
+                          				
+                          			</li>
+                          			
+                          		</ul>	
                           </div>
 
 
                           <div id = "specs-contents" class = "option-contents">
-                          		<div class = "tile">Size</div>
-                          		<ul id = "size-select" class="u-list">
-                               	</ul>
+                          		<ul class="accodian">
+                          			<li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Wrap Width
+		                          			<i class="far fa-caret-down"></i>
+		                          		</a>
+		                          		<div class="inner">
+		                          			<ul id = "wrap-width" class="u-list">
+		                          				<li value="0.75">
+		                          					<span class="thumbnail">
+		                          						<img src = "https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/canvasprint-designtool/size75.jpg"/>
+		                          					</span>
+		                          					<span class="name">0.75</span>
+		                          					<span class="price">Free</span>
+		                          				</li>
+                          						<li value="1.5">
+		                          					<span class="thumbnail">
+		                          						<img src = "https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/canvasprint-designtool/size75.jpg"/>
+		                          					</span>
+		                          					<span class="name">1.5</span>
+		                          					<span class="price">Free</span>
+		                          				</li>
+	                               			</ul>
+		                          		</div>
+                          				
+                          			</li>
+                          			<li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Size
+		                          			<i class="far fa-caret-down"></i>
+		                          			
+		                          		</a>
+		                          		<div class="inner">
+		                          			<ul id = "size-select" class="u-list">
+
+	                               			</ul>
+		                          		</div>
+                          			</li>
+
+                          			
+                          		</ul>	
                           </div>
 
 
                           <div id = "border-contents" class = "option-contents">
-                          		<div class = "tile">Border</div>
-                          		<ul id = "border-select" class="u-list">
-                          			<li value = "color">
-                          				Color
-                          			</li>
-                          			<li value = "wrap">Image Wrap</li>
-                          			<li value = "mirror">Mirror Wrap</li>
-                          		</ul>
+
+                          		<ul class="accodian">
+                          			<li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Border
+		                          			<i class="far fa-caret-down"></i>
+		                          		</a>
+		                          		<div class="inner">
+                          		
+		                          		<ul id = "border-select" class="u-list">
+		                          			<li value = "color">
+		                          				<span class = "thumbnail" value = "color">
+													<input hidden id="color-picker"/>
+		                          				</span>
+		                          				<span class="name">Color</span>
+		                          				<span class="price">Free</span>
+		                          			</li>
+		                          			<li value = "wrap">
+		                          				<span class = "thumbnail" value = "wrap">
+		                          					
+		                          				</span>
+		                          				<span class="name">Image Wrap</span>
+		                          				<span class="price">Free</span>
+		                          			</li>
+		                          			<li class="selected" value = "mirror" style="padding: 8%;">
+		                          				<span class = "thumbnail" value = "mirror" > 
+		                          					
+		                          				</span>
+		                          				<span class="name">Mirror Wrap</span>
+		                          				<span class="price">Free</span>
+		                          			</li>
+		                          		</ul>
+
+		                          	</div>
+		                          </li>
+		                         </ul>
+                          </div>
+
+
+                          <div id = "options-contents" class = "option-contents">
+
+                          		<ul class="accodian">
+                          			<li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Color Finishing
+		                          			<i class="far fa-caret-down"></i>
+		                          		</a>
+		                          		<div class="inner">
+                          		
+		                          		<ul id = "filter-select" class="u-list">
+		                          			<li value = "original"  style="padding: 8%;">
+		                          				<span class = "thumbnail" >
+		                          				</span>
+		                          				<span class="name">Original</span>
+		                          				<span class="price">Free</span>
+		                          			</li>
+		                          			<li value = "sepia"  style="padding: 8%;">
+		                          				<span class = "thumbnail" >
+		                          				</span>
+		                          				<span class="name">Sepia</span>
+		                          				<span class="price">Free</span>
+		                          			</li>
+		                          			<li value = "grayscale" style="padding: 8%;">
+		                          				<span class = "thumbnail" > 
+		                          				</span>
+		                          				<span class="name">Grayscale</span>
+		                          				<span class="price">Free</span>
+		                          			</li>
+		                          		</ul>
+		                          	</div>
+		                          </li>
+
+
+		                          <li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Hardware Options
+		                          			<i class="far fa-caret-down"></i>
+		                          		</a>
+		                          		<div class="inner">
+                          		
+			                          		<ul id = "hardware" class="u-list">
+			                          			<li value = "original"  style="padding: 8%;">
+			                          				<span class = "thumbnail" >
+			                          				</span>
+			                          				<span class="name">Without Hanger</span>
+			                          				<span class="price">Free</span>
+			                          			</li>
+			                          			<li value = "sepia"  style="padding: 8%;">
+			                          				<span class = "thumbnail" >
+			                          				</span>
+			                          				<span class="name">Metallic Hanger</span>
+			                          				<span class="price">Free</span>
+			                          			</li>
+			                          			<li value = "grayscale" style="padding: 8%;">
+			                          				<span class = "thumbnail" > 
+			                          				</span>
+			                          				<span class="name">Smooth Hanger</span>
+			                          				<span class="price">Free</span>
+			                          			</li>
+			                          		</ul>
+
+			                          	</div>
+		                          </li>
+		                          <li>
+                          				<a class = "tile toggle" href="javascript:void(0);">
+		                          			Lamination
+		                          			<i class="far fa-caret-down"></i>
+		                          		</a>
+		                          		<div class="inner">
+                          		
+			                          		<ul id = "hardware" class="u-list">
+			                          			<li value = "original"  style="padding: 8%;">
+			                          				<span class = "thumbnail" >
+			                          				</span>
+			                          				<span class="name">Without Lamination</span>
+			                          				<span class="price">Free</span>
+			                          			</li>
+			                          			<li value = "sepia"  style="padding: 8%;">
+			                          				<span class = "thumbnail" >
+			                          				</span>
+			                          				<span class="name">Simple Lamination</span>
+			                          				<span class="price">Free</span>
+			                          			</li>
+			                          			<li value = "grayscale" style="padding: 8%;">
+			                          				<span class = "thumbnail" > 
+			                          				</span>
+			                          				<span class="name">Liquid Lamination</span>
+			                          				<span class="price">Free</span>
+			                          			</li>
+			                          		</ul>
+
+			                          	</div>
+		                          </li>
+
+		                        </ul>
+
                           </div>
 
 					</div>
@@ -126,6 +436,7 @@
 
 		<!-- App Wrapper -->
 		<div class="app-wrapper">
+			
 			<!-- App bar -->
 			<div class="app-bar">
 				<div class="app-bar-s1">
@@ -134,8 +445,9 @@
 				</div>
 				
 				<div class="app-bar-s2">
-					<a class="b1" id = "room-view" >Room View</a>
-					<a class="b1" id = "add-to-cart">Rs. 199 | Add to cart</a>
+					<a class="b1" id = "open-modal3d" >3D View</a>
+					<a class="b1" id = "open-modalroom" >Room View</a>
+					<a class="b1" id = "add-tocart">Rs. 199 | Add to cart</a>
 				</div>
 			</div>
 
@@ -148,9 +460,9 @@
 				<!-- Editing Area -->
 				<div class="edit-area">
 					<!-- Main Canvas Container -->
-					<div class="canvas-preview">
-						<div  id="main-container" class="main-container">
-					
+					<div id = "canvas-preview" class="canvas-preview">
+						<div id = "main-container" class="main-container">
+							
 						</div>
 					</div>
 					
@@ -164,17 +476,23 @@
 </body>
 	<!-- JS  -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    CDN
-
-    <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
+  	<script src="https://unpkg.com/three@0.85.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.85.0/examples/js/Detector.js"></script>
+    <script src="https://unpkg.com/three@0.85.0/examples/js/libs/stats.min.js"></script>
+    <script src="https://unpkg.com/three@0.85.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.js" integrity="sha512-1aNp9qKP+hKU/VJwCtYqJP9tdZWbMDN5pEEXXoXT0pTAxZq1HHZhNBR/dtTNSrHO4U1FsFGGILbqG1O9nl8Mdg==" crossorigin="anonymous"></script>
+  
 
 	<script type="text/javascript" src = "./js/ui.js"></script>
-	<script type="text/javascript" src="./external-libraries/fabric.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js" integrity="sha512-Pdu3zoEng2TLwwjnDne3O7zaeWZfEJHU5B63T+zLtME/wg1zfeSH/1wrtOzOC37u2Y1Ki8pTCdKsnbueOlFlMg==" crossorigin="anonymous"></script>
+
+	<!-- <script type="text/javascript" src="./external-libraries/fabric.js"></script> -->
 	<script type="text/javascript" src="./external-libraries/html2canvas.js"></script>
 	<script type="text/javascript" src="./external-libraries/jpicker.js"></script>
-    <script type="text/javascript" src="./js/canvas.js"></script>
-    <script type="text/javascript" src="./js/single-print.js"></script>
-    <script type="text/javascript" src="./js/collage-print.js"></script>
-    <script type="text/javascript" src="./js/design-tool.js"></script>
-    <script type="text/javascript" src="./js/editor.js"></script>
+	<script type="text/javascript" src="./js/shared/api.js"></script>
+	<script type="text/javascript" src="./js/canvas-wrap/index.js"></script>
+	<script type="text/javascript" src="./js/canvas-wrap.js"></script>
+	<script type="text/javascript" src="./js/editor.js"></script>
 </html>
+

@@ -124,7 +124,7 @@ body {
 .nav-rail {
 	display: block;
 	position: fixed;
-	top: 56px;
+	top: 70px;
 	left: 0;
 	bottom: 0;
 	width: max-content;
@@ -161,9 +161,12 @@ body {
 	cursor: pointer;
 }
 
+.nav-rail-option:hover {
+	background-color:#17adc1;
+}
+
 .active-rail {
-	background-color: white;
-	color: gray;
+	background-color: #17adc1;
 }
 
 .nav-rail-option i {
@@ -181,12 +184,12 @@ body {
 
 
 .nav-rail-drawer {
-	width: 360px;
+	width: 200px;
 	height: 100%;
 	background-color: white;
 	top: 0;
 	bottom: 0;
-	right: -360px;
+	right: -200px;
 	padding: 0;
 	position: absolute;
 }
@@ -204,9 +207,9 @@ body {
 
 
 .rail-drawer-list {
-	width: 300px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 	list-style: none;
 	justify-content: center;
 	/*padding: 0 10px;*/
@@ -227,10 +230,11 @@ body {
 }
 
 
+
 /*	App Bar	*/
 .app-bar {
 	width: 100%;
-	height: 56px;
+	height: 70px;
 	background-color: #1e3d58;
 	display: flex;
 	flex-direction: row;
@@ -299,7 +303,7 @@ body {
 	width: 100% !important;
 	height: 100% !important;
 	display: grid !important;
-	grid-template-columns: 400px 1fr;
+	grid-template-columns: 300px 1fr;
 	padding: 0;
 }
 
@@ -316,7 +320,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top : 60px;
+	padding-top :60px;
 }
 
 .main-container {
@@ -343,12 +347,19 @@ body {
 	height: max-content;
 	display: flex;
 	align-content: center;
-	align-items: center;
+	align-items: space-between;
 	padding: 10px 20px;
 	background-color: white;
 	text-align:left;
 	background-color:  #e8ebee;
 	font-size: 1rem;
+	font-weight: 500;
+	justify-content: space-between;
+	font-family: 'Ubuntu' , sans-serif;
+}
+
+.tile i {
+	float: right;
 }
 
 
@@ -356,22 +367,65 @@ body {
 .u-list {
 	width: 100%;
 	list-style: none;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	padding: 0 10px;
 }
 
 .u-list li {
 	width: 100%;
-	height: 150px;
-	border : 1px solid white;
-	background-color:  #e8ebee;
+	border: 1px solid  #e8ebee;
 	justify-content: center;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 	align-items: center;
+	padding: 10px 2px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+
+.u-list li span.thumbnail {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #17adc1;
+	width:100%;
+	height: 100%;
+	min-height:150px;
+}
+
+span.thumbnail img {
+	display: block;
+	width: 100%;
+}
+
+.u-list li span.square {
+	background-color:#e8ebee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #17adc1;
+	width:100%;
+	height: 100%;
+}
+
+
+.u-list li span.name {
+	font-size: 1rem;
+	font-weight: 400;
+	padding: 6px 0;
+	text-align: center;
+}
+
+.u-list li span.price {
+	font-size: 0.9rem;
+	font-weight: 300;
+	padding: 1px 0;
+	text-align: center;
 }
 
 .u-list li:hover {
@@ -407,14 +461,23 @@ body {
 	position: absolute;
 	right: 40px;
 	top: 20px;
+	width: 44px;
+	height: 44px;
 	font-size: 2rem;
 	color: white;
+	/*background-color: #6d6f73;*/
+	/*padding:10px;*/
+	border:2px white solid;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	background-color: #17adc1;
+	border-radius: 50%;
 }
 
 .modal-wrapper {
-	max-width: 90vw;
-	max-height: 90vh;
-	background-color: white;
+	/*background-color: white;*/
 	display: block;
 }
 
@@ -425,7 +488,6 @@ body {
 }
 
 .room_view_image {
-	max-width: 900px;
 	display: block;
 	height: auto;
 }
@@ -436,4 +498,144 @@ body {
 	left: 300px;
 	width: 200px;
 	z-index: 901;
+}
+
+/* edit-area */
+
+.edit-container {
+	width: 90vw;
+	height: 90vh;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	background-color: white;
+	border-radius: 10px;
+}
+
+
+.edit-top-bar {
+
+}
+
+#edit-album-title {
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+
+
+.upload-option-tab {
+	width: max-content;
+	margin-right: auto;
+	margin-left: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr ;
+	grid-gap: 10px;
+	padding: 20px 0;
+}
+
+.upload-option {
+	display: block;
+	padding: 15px 8px;
+	width:100%;
+	background: #ffffff;
+	border: solid 1px #333;
+    border-top-color: rgb(51, 51, 51);
+    border-right-color: rgb(51, 51, 51);
+    border-bottom-color: rgb(51, 51, 51);
+    border-left-color: rgb(51, 51, 51);
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	border-radius: 3px;
+	margin:0 6px;
+}
+
+.upload-option:hover {
+	background-color: #17adc1;
+	color: white;
+	border-color: white;
+}
+
+.album-tab {
+	display: flex;
+	width: max-content;
+	/*flex-direction: column;*/
+	margin-left: auto;
+	justify-content: center;
+	align-items: center;
+	margin-right: auto;
+}
+
+.album-tab h3 {
+	margin:0;
+	padding: 0px 6px;
+	color: #333;
+	font-weight: 400;
+}
+
+
+.album-tab input {
+	border: solid 1px #333;
+	padding: 10px 12px;
+	border-radius: 3px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+ul .inner {
+  padding: 10px;
+  overflow: hidden;
+  display: none;
+}
+ul .inner.show {
+  /*display: block;*/
+}
+ul li {
+  margin: 0;
+  border-bottom: 1px white solid;
+}
+ul li a.toggle {
+  width: 100%;
+  display: block;
+  background: #e8ebee;
+  color: black;
+  padding: 0.75em;
+}
+ul li a.toggle:hover {
+  background: #17adc1;
+  color: white;
+}
+
+
+
+a:active {
+	outline: none;
+}
+
+
+.sp-replacer {
+	width: 0 !important;
+	height: 0!important;
+	box-sizing: border-box!important;
+	opacity: 0;
+}
+
+.selected {
+	position: relative;
+	border: 1px  solid black !important;
+}
+
+.selected::before {
+	content: '';
+display: block;
+position: absolute;
+right: 0;
+top: 0;
+width: 20px;
+height: 20px;
+background: url("https://www.canvaschamp.in/skin/frontend/default/cptheme1/images/canvasprint-designtool/arrow_selected.jpg") no-repeat scroll 100% 0;
 }

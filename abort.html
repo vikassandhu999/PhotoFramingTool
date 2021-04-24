@@ -1,504 +1,393 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
 
-<!-- Mirrored from demo.qodeinteractive.com/bridge48/contact/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Sep 2020 10:10:27 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<!-- /Added by HTTrack -->
+    <title>Image Filters | Fabric.js Demos</title>
 
-<head>
-    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+      pre { margin-left: 15px !important }
+    </style>
 
-    <title>Newmomentum | Contact Us</title>
-
-    <link rel="stylesheet" href="../wp-content/plugins/sitepress-multilingual-cms/res/css/language-selector.css" type="text/css" media="all" />
-
-
-
-    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
-
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="pingback" href="../xmlrpc.html" />
-    <link rel="shortcut icon" type="image/x-icon" href="../wp-content/themes/bridge/img/favicon.ico">
-    <link rel="apple-touch-icon" href="../wp-content/themes/bridge/img/favicon.ico" />
-    <!--[if gte IE 9]>
-    <style type="text/css">
-      .gradient {
-         filter: none;
+    <style>
+      #progress_bar {
+        margin: 10px 0;
+        padding: 3px;
+        border: 1px solid #000;
+        font-size: 14px;
+        clear: both;
+        opacity: 0;
+        -moz-transition: opacity 1s linear;
+        -o-transition: opacity 1s linear;
+        -webkit-transition: opacity 1s linear;
+      }
+      #progress_bar.loading {
+        opacity: 1.0;
+      }
+      #progress_bar .percent {
+        background-color: #99ccff;
+        height: auto;
+        width: 0;
       }
     </style>
-  <![endif]-->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600,700,800,400italic|Raleway:100,200,300,400,600,700,800,400italic|Lora:100,200,300,400,600,700,800,400italic|Montserrat:100,200,300,400,600,700,800,400italic&amp;subset=latin,latin-ext'
-        rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
 
-    <!-- Google Tag Manager for WordPress by gtm4wp.com -->
-    <script data-cfasync="false" type="text/javascript">
-        //<![CDATA[
-        var gtm4wp_datalayer_name = "dataLayer";
-        var dataLayer = dataLayer || [];
-        //]]>
-    </script>
-    <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
-    <link rel="alternate" type="application/rss+xml" title="Bridge &raquo; Feed" href="../feed/index.html" />
-    <link rel="alternate" type="application/rss+xml" title="Bridge &raquo; Comments Feed" href="../comments/feed/index.html" />
-    <link rel="alternate" type="application/rss+xml" title="Bridge &raquo; Contact Us Comments Feed" href="feed/index.html" />
-    <link rel='stylesheet' id='layerslider-css' href='../wp-content/plugins/LayerSlider/static/css/layerslider.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='ls-google-fonts-css' href='https://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&amp;subset=latin%2Clatin-ext' type='text/css' media='all' />
-    <link rel='stylesheet' id='qode_demos_css-css' href='../../../toolbar.qodeinteractive.com/_qode_toolbar/assets/css/qode-demos-modulesd252.css?ver=4.0.26' type='text/css' media='all' />
-    <link rel='stylesheet' id='qode_demos_swiper_css-css' href='../../../toolbar.qodeinteractive.com/_qode_toolbar/assets/css/swiperd252.css?ver=4.0.26' type='text/css' media='all' />
-    <link rel='stylesheet' id='default_style-css' href='../wp-content/themes/bridge/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/bridge/css/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='stylesheet-css' href='../wp-content/themes/bridge/css/stylesheet.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='woocommerce-css' href='../wp-content/themes/bridge/css/woocommerce.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='woocommerce_responsive-css' href='../wp-content/themes/bridge/css/woocommerce_responsive.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='style_dynamic-css' href='../wp-content/themes/bridge/css/style_dynamic.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='responsive-css' href='../wp-content/themes/bridge/css/responsive.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='style_dynamic_responsive-css' href='../wp-content/themes/bridge/css/style_dynamic_responsive.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='qode_toolbar-css' href='../wp-content/themes/bridge/css/toolbar.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='js_composer_front-css' href='../wp-content/plugins/js_composer/assets/css/js_composer.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='custom_css-css' href='../wp-content/themes/bridge/css/custom_css.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='js_composer_custom_css-css' href='../wp-content/uploads/js_composer/custom.css' type='text/css' media='screen' />
-    <script type='text/javascript' src='../wp-content/plugins/LayerSlider/static/js/greensock.js'></script>
-    <script type='text/javascript' src='../wp-includes/js/jquery/jquery.js'></script>
-    <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min.js'></script>
-    <script type='text/javascript' src='../wp-content/plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery.js'></script>
-    <script type='text/javascript' src='../wp-content/plugins/LayerSlider/static/js/layerslider.transitions.js'></script>
-    <script type='text/javascript' src='../wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js'></script>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.html?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" />
-    <meta name="generator" content="WordPress 4.0.26" />
-    <meta name="generator" content="WooCommerce 2.2.6" />
-    <link rel='canonical' href='index.html' />
-    <link rel='shortlink' href='../index2ba6.html?p=1452' />
+    <!--[if lt IE 9]>
+      <script src="js/excanvas.js"></script>
+    <![endif]-->
 
-    <!-- Google Tag Manager for WordPress by gtm4wp.com -->
-    <script data-cfasync="false" type="text/javascript">
-        //<![CDATA[
-        dataLayer.push({
-            "pagePostType": "page",
-            "pagePostType2": "single-page",
-            "pagePostAuthor": "admin"
-        }); //]]>
-    </script>
-    <script data-cfasync="false">
-        //<![CDATA[
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '//www.googletagmanager.com/gtm.' + 'js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WCC77WV'); //]]>
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
-    <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress." />
-    <!--[if IE 8]><link rel="stylesheet" type="text/css" href="https://demo.qodeinteractive.com/bridge48/wp-content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]-->
-</head>
+    <script src="js/fabric.js"></script>
+    <script src="js/master.js"></script>
+    <script src="js/CanvasToPNG.js"></script>
 
-<body class="page page-id-1452 page-template page-template-contact-page-php ajax_fade page_not_loaded  qode-theme-ver-5.4.1 wpb-js-composer js-comp-ver-4.3.4 vc_responsive">
+  </head>
+  <body>
 
-    <div class="ajax_loader">
-        <div class="ajax_loader_1">
-            <div class="two_rotating_circles">
-                <div class="dot1"></div>
-                <div class="dot2"></div>
-            </div>
-        </div>
-    </div>
-    <!--
-<div class="sticky_menu">
-    <div class="sticky_menu_inner">
-        <div class="sticky_close_bar">
-            <div class="left">
-                <p><span aria-hidden="true" class="icon_question_alt"></span> With <span>one purchase</span> of the Bridge theme you get the original theme, 100 demos and 24 layout concepts</p>
-            </div>
-            <div class="right">
-                <a href="#">Close<span aria-hidden="true" class="icon_close"></span></a>
-            </div>
-        </div>
-        <ul>
-            <li>
-                <a target="_blank" href="http://demo.qodeinteractive.com/bridge">
-                    <div class="thumb"><img src="http://demo.qodeinteractive.com/bridge/demo-files/landing/img/bridge_original_thumb.jpg"></div>
-                    <span class="text">Bridge original theme</span>
-                    <span aria-hidden="true" class="arrow_right-up"></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="http://demo.qodeinteractive.com/bridgetour/demos/">
-                    <div class="thumb"><img src="http://demo.qodeinteractive.com/bridge/demo-files/landing/img/bridge_demos_thumb.jpg"></div>
-                    <span class="text">100 Unique Demos</span>
-                    <span aria-hidden="true" class="arrow_right-up"></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="http://demo.qodeinteractive.com/bridgetour/concepts/">
-                    <div class="thumb"><img src="http://demo.qodeinteractive.com/bridge/demo-files/landing/img/bridge_concepts_thumb.jpg"></div>
-                    <span class="text">24 Layout Concepts</span>
-                    <span aria-hidden="true" class="arrow_right-up"></span>
-                </a>
-            </li>
-        </ul>
-    </div>
+
+
+    <div id="bd-wrapper" >
+      <h2>Image Filters</h2>
+
+      <style>
+  .controls { display: inline-block; background: #fafafa; margin-left: 10px; padding: 15px; border-left: 1px dotted #aaa; }
+  .canvas-container { display: inline-block; vertical-align: top; }
+  input[disabled] { opacity: 0.5; }
+  #bd-wrapper { min-width: 1600px; }
+</style>
+
+<canvas id="c" width="600" height="600"></canvas>
+<div class="controls">
+  <h3>Filters:</h3>
+  <p>
+    <label><span>Grayscale:</span> <input type="checkbox" id="grayscale" disabled></label>
+  </p>
+  <p>
+    <label><span>Invert:</span> <input type="checkbox" id="invert" disabled></label>
+  </p>
+  <p>
+    <label><span>Sepia:</span> <input type="checkbox" id="sepia" disabled></label>
+  </p>
+  <p>
+    <label><span>Sepia2:</span> <input type="checkbox" id="sepia2" disabled></label>
+  </p>
+  <p>
+    <label><span>Remove white:</span> <input type="checkbox" id="remove-white" disabled></label>
+    <br>
+    <label>Threshold: <input type="range" id="remove-white-threshold" value="60" min="0" max="255" disabled></label>
+    <br>
+    <label>Distance: <input type="range" id="remove-white-distance" value="10" min="0" max="255" disabled></label>
+  </p>
+  <p>
+    <label><span>Brightness:</span> <input type="checkbox" id="brightness" disabled></label>
+    <br>
+    <label>Value: <input type="range" id="brightness-value" value="100" min="0" max="255" disabled></label>
+  </p>
+  <p>
+    <label><span>Noise:</span> <input type="checkbox" id="noise" disabled></label>
+    <br>
+    <label>Value: <input type="range" id="noise-value" value="100" min="0" max="1000" disabled></label>
+  </p>
+  <p>
+    <label><span>GradientTransparency:</span> <input type="checkbox" id="gradient-transparency" disabled></label>
+    <br>
+    <label>Value: <input type="range" id="gradient-transparency-value" value="100" min="0" max="255" disabled></label>
+  </p>
+  <p>
+    <label><span>Pixelate</span> <input type="checkbox" id="pixelate" disabled></label>
+    <br>
+    <label>Value: <input type="range" id="pixelate-value" value="4" min="2" max="20" disabled></label>
+  </p>
+  <p>
+    <label><span>Blur:</span> <input type="checkbox" id="blur" disabled></label>
+  </p>
+  <p>
+    <label><span>Sharpen:</span> <input type="checkbox" id="sharpen" disabled></label>
+  </p>
+  <p>
+    <label><span>Emboss:</span> <input type="checkbox" id="emboss" disabled></label>
+  </p>
+  <p>
+    <label><span>Tint:</span> <input type="checkbox" id="tint" disabled></label><br>
+    <label>Color: <input type="color" id="tint-color" value=""></label><br>
+    <label>Opacity: <input type="range" id="tint-opacity" min="0" max="1" value="1" step="0.1"></label><br>
+  </p>
+  <p>
+    <label><span>Save PNG:</span> <input type="button" id="saveToPNG" disabled></label>
+  </p>
+  <p>
+    <input type="file" id="files3" name="files3[]" multiple="">
+    <div id="progress_bar"><div class="percent">0%</div></div>
+  </p>
 </div>
--->
-    <div class="wrapper">
-        <div class="wrapper_inner">
-            <!-- Google Analytics start -->
-            <!-- Google Analytics end -->
+
+<script id="main">(function() {
+  fabric.Object.prototype.transparentCorners = false;
+  var $ = function(id){return document.getElementById(id)};
+
+  function applyFilter(index, filter) {
+    var obj = canvas.getActiveObject();
+    obj.filters[index] = filter;
+    obj.applyFilters(canvas.renderAll.bind(canvas));
+  }
+
+  function applyFilterValue(index, prop, value) {
+    var obj = canvas.getActiveObject();
+    if (obj.filters[index]) {
+      obj.filters[index][prop] = value;
+      obj.applyFilters(canvas.renderAll.bind(canvas));
+    }
+  }
+
+  fabric.Object.prototype.padding = 5;
+  fabric.Object.prototype.transparentCorners = false;
+
+  var canvas = this.__canvas = new fabric.Canvas('c'),
+      f = fabric.Image.filters;
+
+  fabric.Image.fromURL('assets/bg.png', function(img) {
+    canvas.backgroundImage = img;
+    canvas.backgroundImage.width = 600;
+    canvas.backgroundImage.height = 600;
+  });
 
 
-            <header class=" scroll_header_top_area dark stick transparent page_header">
-                <div class="header_inner clearfix">
+  canvas.on({
+    'object:selected': function() {
+      fabric.util.toArray(document.getElementsByTagName('input'))
+                          .forEach(function(el){ el.disabled = false; })
 
-                    <div class="header_top_bottom_holder">
-                        <div class="header_bottom clearfix" style=' background-color:rgba(255, 255, 255, 0);'>
-                            <div class="header_inner_left">
-                                <div class="mobile_menu_button"><span><i class="fa fa-bars"></i></span></div>
-                                <div class="logo_wrapper">
-                                    <div class="q_logo">
-                                        <a href="../index.html"><img class="normal" src="../wp-content/uploads/2014/10/logo1.png" alt="Logo" /><img class="light" src="../wp-content/uploads/2014/05/logo1.png" alt="Logo" /><img class="dark" src="../wp-content/uploads/2014/10/logo1.png"
-                                                alt="Logo" /><img class="sticky" src="../wp-content/uploads/2014/10/logo1.png" alt="Logo" /></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="header_inner_right">
-                                <div class="side_menu_button_wrapper right">
-                                    <div class="side_menu_button">
-                                    </div>
-                                </div>
-                            </div>
-                            <nav class="main_menu drop_down right">
-                                <ul id="menu-top_menu" class="">
-                                    <li id="nav-menu-item-15079" class="menu-item menu-item-type-post_type menu-item-object-page  narrow"><a href="../index.html" class=""><i class="menu_icon fa blank"></i><span>Home</span><span class="plus"></span></a></li>
-                                    <li id="nav-menu-item-15365" class="menu-item menu-item-type-post_type menu-item-object-page  narrow"><a href="../meet-j-r-abrams/index.html" class=""><i class="menu_icon fa blank"></i><span>About</span><span class="plus"></span></a></li>
-                                    <li id="nav-menu-item-15366" class="menu-item menu-item-type-post_type menu-item-object-page  narrow"><a href="../our-team/index.html" class=""><i class="menu_icon fa blank"></i><span>ADVISORS</span><span class="plus"></span></a></li>
-                                    <li id="nav-menu-item-15367" class="menu-item menu-item-type-post_type menu-item-object-page  narrow"><a href="../photo-journal/journal.php" class=""><i class="menu_icon fa blank"></i><span>Pressroom</span><span class="plus"></span></a></li>
-                                    <li id="nav-menu-item-15368" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1452 current_page_item  narrow"><a href="index.html" class=" current "><i class="menu_icon fa blank"></i><span>Contact</span><span class="plus"></span></a></li>
-                                </ul>
-                            </nav>
-                            <nav class="mobile_menu">
-                                <ul id="menu-top_menu-1" class="">
-                                    <li id="mobile-menu-item-15079" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../index.html" class=""><span>Home</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-                                    <li id="mobile-menu-item-15365" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../meet-j-r-abrams/index.html" class=""><span>About</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-                                    <li id="mobile-menu-item-15366" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../our-team/index.html" class=""><span>ADVISORY BOARD</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-                                    <li id="mobile-menu-item-15367" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../photo-journal/journal.php" class=""><span>Pressroom</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-                                    <li id="mobile-menu-item-15368" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1452 current_page_item "><a href="index.html" class=" current "><span>Contact</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+      var filters = ['grayscale', 'invert', 'remove-white', 'sepia', 'sepia2',
+                      'brightness', 'noise', 'gradient-transparency', 'pixelate',
+                      'blur', 'sharpen', 'emboss', 'tint'];
 
-            </header>
+      for (var i = 0; i < filters.length; i++) {
+        $(filters[i]).checked = !!canvas.getActiveObject().filters[i];
+      }
+    },
+    'selection:cleared': function() {
+      fabric.util.toArray(document.getElementsByTagName('input'))
+                          .forEach(function(el){ el.disabled = true; })
+    }
+  });
 
-            <a id='back_to_top' href='#'>
-                <span class="fa-stack">
-        <i class="fa fa-arrow-up" style=""></i>
-      </span>
-            </a>
+  fabric.Image.fromURL('assets/robot.png', function(img) {
+    var oImg = img.set({ left: 50, top: 100, angle: -15 }).scale(0.9);
+    canvas.add(oImg).renderAll();
+    canvas.setActiveObject(oImg);
+  });
 
-            <div class="content ">
-                <div class="meta">
+  $('grayscale').onclick = function() {
+    applyFilter(0, this.checked && new f.Grayscale());
+  };
+  $('invert').onclick = function() {
+    applyFilter(1, this.checked && new f.Invert());
+  };
+  $('remove-white').onclick = function () {
+    applyFilter(2, this.checked && new f.RemoveWhite({
+      threshold: $('remove-white-threshold').value,
+      distance: $('remove-white-distance').value
+    }));
+  };
+  $('remove-white-threshold').onchange = function() {
+    applyFilterValue(2, 'threshold', this.value);
+  };
+  $('remove-white-distance').onchange = function() {
+    applyFilterValue(2, 'distance', this.value);
+  };
+  $('sepia').onclick = function() {
+    applyFilter(3, this.checked && new f.Sepia());
+  };
+  $('sepia2').onclick = function() {
+    applyFilter(4, this.checked && new f.Sepia2());
+  };
+  $('brightness').onclick = function () {
+    applyFilter(5, this.checked && new f.Brightness({
+      brightness: parseInt($('brightness-value').value, 10)
+    }));
+  };
+  $('brightness-value').onchange = function() {
+    applyFilterValue(5, 'brightness', parseInt(this.value, 10));
+  };
+  $('noise').onclick = function () {
+    applyFilter(6, this.checked && new f.Noise({
+      noise: parseInt($('noise-value').value, 10)
+    }));
+  };
+  $('noise-value').onchange = function() {
+    applyFilterValue(6, 'noise', parseInt(this.value, 10));
+  };
+  $('gradient-transparency').onclick = function () {
+    applyFilter(7, this.checked && new f.GradientTransparency({
+      threshold: parseInt($('gradient-transparency-value').value, 10)
+    }));
+  };
+  $('gradient-transparency-value').onchange = function() {
+    applyFilterValue(7, 'threshold', parseInt(this.value, 10));
+  };
+  $('pixelate').onclick = function() {
+    applyFilter(8, this.checked && new f.Pixelate({
+      blocksize: parseInt($('pixelate-value').value, 10)
+    }));
+  };
+  $('pixelate-value').onchange = function() {
+    applyFilterValue(8, 'blocksize', parseInt(this.value, 10));
+  };
+  $('blur').onclick = function() {
+    applyFilter(9, this.checked && new f.Convolute({
+      matrix: [ 1/9, 1/9, 1/9,
+                1/9, 1/9, 1/9,
+                1/9, 1/9, 1/9 ]
+    }));
+  };
+  $('sharpen').onclick = function() {
+    applyFilter(10, this.checked && new f.Convolute({
+      matrix: [  0, -1,  0,
+                -1,  5, -1,
+                 0, -1,  0 ]
+    }));
+  };
+  $('emboss').onclick = function() {
+    applyFilter(11, this.checked && new f.Convolute({
+      matrix: [ 1,   1,  1,
+                1, 0.7, -1,
+               -1,  -1, -1 ]
+    }));
+  };
+  $('tint').onclick = function() {
+    applyFilter(12, this.checked && new f.Tint({
+      color: document.getElementById('tint-color').value,
+      opacity: parseFloat(document.getElementById('tint-opacity').value)
+    }));
+    var svg = canvas.toSVG();
+  };
+  $('tint-color').onchange = function() {
+    applyFilterValue(12, 'color', this.value);
+  };
+  $('tint-opacity').onchange = function() {
+    applyFilterValue(12, 'opacity', parseFloat(this.value));
+  };
+  /*$('saveToPNG').onclick = function() {
+    var context = canvas.getContext('2d');
+    // save canvas image as data url (png format by default)
+    var dataURL = canvas.toDataURL();
+    // set image src to dataURL so it can be saved as an image
+    //document.getElementById('saveToPNG').src = dataURL;
+    document.write('<img src="'+dataURL+'"/>');
+  };*/
 
+  var progress = document.querySelector('.percent');
 
-                    <div class="seo_title">Newmomentum | Contact Us</div>
+  function abortRead() {
+    reader.abort();
+  }
 
+  function errorHandler(evt) {
+    switch(evt.target.error.code) {
+      case evt.target.error.NOT_FOUND_ERR:
+        alert('File Not Found!');
+        break;
+      case evt.target.error.NOT_READABLE_ERR:
+        alert('File is not readable');
+        break;
+      case evt.target.error.ABORT_ERR:
+        break; // noop
+      default:
+        alert('An error occurred reading this file.');
+    };
+  }
 
-                    <span id="qode_page_id">1452</span>
-                    <div class="body_classes">page,page-id-1452,page-template,page-template-contact-page-php,ajax_fade,page_not_loaded,,qode-theme-ver-5.4.1,wpb-js-composer js-comp-ver-4.3.4,vc_responsive</div>
-                </div>
-                <div class="content_inner  ">
+  function updateProgress(evt) {
+    // evt is an ProgressEvent.
+    if (evt.lengthComputable) {
+      var percentLoaded = Math.round((evt.loaded / evt.total) * 100);
+      // Increase the progress bar length.
+      if (percentLoaded < 100) {
+        progress.style.width = percentLoaded + '%';
+        progress.textContent = percentLoaded + '%';
+      }
+    }
+  }
 
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
 
+    // Reset progress indicator on new file selection.
+    progress.style.width = '0%';
+    progress.textContent = '0%';
 
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
 
-                    <div class="title_outer title_without_animation" data-height="200">
-                        <div class="title title_size_large  position_center" style="height:200px;background-color:#ffffff;">
-                            <div class="image not_responsive"></div>
-                            <div class="title_holder">
-                               <!-- <div class="container">
-                                    <div class="container_inner clearfix">
-                                        <div class="title_subtitle_holder">
-                                            <h1><span>Contact Us</span></h1>
-                                            <span class="separator small center"></span>
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
 
-                                        </div>
-                                    </div>
-                                </div>-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="container_inner default_template_holder clearfix">
-                            <div class="contact_detail">
-                                <div class="two_columns_33_66 clearfix grid2">
-                                    <div class="column1">
-                                        <div class="column_inner">
-                                            <div class="contact_info">
-                                                <div class="vc_row wpb_row section vc_row-fluid" style=' padding-top:0px; padding-bottom:60px; text-align:left;'>
-                                                    <div class=" full_section_inner clearfix">
-                                                        <div class="vc_col-sm-12 wpb_column vc_column_container">
-                                                            <div class="wpb_wrapper">
+      var reader = new FileReader();
+      reader.onerror = errorHandler;
+      reader.onprogress = updateProgress;
+      reader.onabort = function(e) {
+        alert('File read cancelled');
+      };
+      reader.onloadstart = function(e) {
+        document.getElementById('progress_bar').className = 'loading';
+      };
 
-                                                                <div class="wpb_text_column wpb_content_element ">
-                                                                    <div class="wpb_wrapper">
-                                                                        <h5>Our Office</h5>
-                                                                        &nbsp;
-                                                                        <h4>Hong Kong Office</h4>
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
 
-                                                                    </div>
-                                                                </div>
-                                                                <div class="separator  transparent center  " style="margin-top: 6px;margin-bottom: 6px;"></div>
+        // Ensure that the progress bar displays 100% at the end.
+        progress.style.width = '100%';
+        progress.textContent = '100%';
+        setTimeout("document.getElementById('progress_bar').className='';", 2000);
 
-                                                                <div class="wpb_text_column wpb_content_element ">
-                                                                    <div class="wpb_wrapper">
-                                                                        <p>1303 Technology Plaza</p>
-                                                                        <p>651 King’s Road Hong Kong</p>
-                                                                        <p>Phone: +852 2911 0119</p>
-                                                                        
-                                                                        &nbsp;
-                                                                        </br>
-                                                                        <h4>Singapore Office</h4>
-                                                                        <p>150 Cecil Street</p>
-                                                                        <p>Singapore 069543</p>
-                                                                        <p>Phone: +65 800 852 8171</p>
-                                      &nbsp;
-                                                                        <p><a target="_blank" href = "mailto:contact@newmomtumcorp.com">contact@newmomentumcorp.com</a></p>
+        return function(e) {
+          // Render thumbnail.
+          var file = e.target.result; // the actually file
+          var fileName = escape(theFile.name);//don't need
+          //get file and load it to canvas...
+          canvas.getActiveObject().remove()
+          fabric.Image.fromURL(file, function(img) {
+          var oImg = img.set({ left: 50, top: 100, angle: -15 }).scale(0.9);
+          canvas.add(oImg).renderAll();
+          canvas.setActiveObject(oImg);
+        });
+        };
+      })(f);
 
-                                                                    </div>
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
 
-                                                                </div>
-                                                                <div class="separator  transparent center  " style="margin-top: 6px;margin-bottom: 6px;"></div>
-                                                                <span class='q_social_icon_holder normal_social'><a href='https://twitter.com/' target='_blank'><i class='fa fa-twitter fa-lg simple_social' style='margin: 0 13px 0 0'></i></a></span>
-                                                                <span class='q_social_icon_holder normal_social'><a href='https://www.facebook.com/' target='_blank'><i class='fa fa-facebook fa-lg simple_social' style='margin: 0 13px 0 0'></i></a></span>
-                                                                <span class='q_social_icon_holder normal_social'><a href='https://plus.google.com/' target='_blank'><i class='fa fa-google-plus fa-lg simple_social' style='margin: 0 13px 0 0'></i></a></span>
-                                                                <span class='q_social_icon_holder normal_social'><a href='http://instagram.com/' target='_blank'><i class='fa fa-instagram fa-lg simple_social' style='margin: 0 13px 0 0'></i></a></span>
-                                                                <span class='q_social_icon_holder normal_social'><a href='https://www.tumblr.com/' target='_blank'><i class='fa fa-tumblr fa-lg simple_social' style='margin: 0 13px 0 0'></i></a></span>
-                                                                <span class='q_social_icon_holder normal_social'><a href='https://www.pinterest.com/' target='_blank'><i class='fa fa-pinterest fa-lg simple_social' style='margin: 0 13px 0 0'></i></a></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="column2">
-                                        <div class="column_inner">
-                                            <div class="contact_form">
-                                                <h5>Contact Us</h5>
+  document.getElementById('files3').addEventListener('change', handleFileSelect, false);
 
-                                                <form id="contact-form">
+  var imageCanvas = document.getElementById('c'); 
+  var ctp = new CanvasToPNG('php/CanvasToPNG.php')
+  ctp.setSaveButton('#saveToPNG', imageCanvas, 'myimage');
 
-                                                    <input type="text" class="requiredField" required name="name" id="name" value="" placeholder="Your Name *" />
-                                                    <br/>
+})();
+</script>
 
-                                                    <input type="text" class="requiredField email" required name="email" id="email" value="" placeholder="Email *" />
-                                                    <br/>
-
-                                                    <input type="text" class="requiredField" required name="subject" id="subject" value="" placeholder="Subject" />
-
-
-                                                    <textarea name="body" id="message" required rows="10" placeholder="Message"></textarea>
-                                                    <br/>
-
-                                                    <span class="submit_button_contact">
-                            <input class="qbutton" type="submit" value="Submit" />
-                          </span>
-                                                </form>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script type="text/javascript">
-                         jQuery(document).ready(function($) {
-                            $j('form#contact-form').submit(function() {
-                                $j('form#contact-form .contact-error').remove();
-                                var hasError = false;
-                                $j('form#contact-form .requiredField').each(function() {
-                                    if (jQuery.trim($j(this).val()) == '' || jQuery.trim($j(this).val()) == jQuery.trim($j(this).attr('placeholder'))) {
-                                        var labelText = $j(this).prev('label').text();
-                                        $j(this).parent().append("<strong class='contact-error'>This is a required field</strong>");
-                                        $j(this).addClass('inputError');
-                                        hasError = true;
-                                    } else { //else 1 
-                                        if ($j(this).hasClass('email')) { //if hasClass('email')
-                                            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                                            if (!emailReg.test(jQuery.trim($j(this).val()))) {
-                                                var labelText = $j(this).prev('label').text();
-                                                $j(this).parent().append("<strong class='contact-error'>Please enter a valid email address.</strong>");
-                                                $j(this).addClass('inputError');
-                                                hasError = true;
-                                            }
-                                        } //end of if hasClass('email')
-
-                                    } // end of else 1 
-                                }); //end of each()
-
-                                if (!hasError) {
-                                    name = $j("input#name").val();
-                                    email = $j("input#email").val();
-                                    subject = $j("input#subject").val();
-                                    message = $j("textarea#message").val();
-
-                                    var form_post_data = "";
-
-                                    var html = $j.ajax({
-                                        type: "POST",
-                                        url: "ajax_mail.php",
-                                        data: "name=" + name + "&email=" + email + "&subject=" + subject+ "&body=" + message,
-                                        async: false
-                                    }).responseText;
-
-                                    if (html == "success") {
-                                        var formInput = $j(this).serialize();
-
-                                        $j("form#contact-form").before("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>THANK YOU!</strong><p>Your email was successfully sent. We will contact you as soon as possible.</p><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-                                          $j("input#name").val("");
-                                          $j("input#email").val("");
-                                          $j("input#subject").val("");
-                                          $j("textarea#message").val("");
-                                        $j.post($j(this).attr('action'), formInput);
-                                        hasError = false;
-                                        return false;
-                                    } else {
-                                        $j("form#contact-form").before("<div class='alert alert-danger alert-dismissible fade show' role='alert'><p>Email Service has some problem</p><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-                                        return false;
-                                    }
-                                }
-                                return false;
-                            });
-                        });
-                    </script>
-
-                    <div class="content_bottom">
-                    </div>
-
-                </div>
-            </div>
-            <footer>
-                <div class="footer_inner clearfix">
-                </div>
-            </footer>
-        </div>
     </div>
-    <div class="qode-demos-toolbar" data-demo="demo.qodeinteractive.com/bridge48" data-position="80%"></div>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCC77WV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <script type='text/javascript' src='../wp-content/plugins/anti-spam/js/anti-spam-4.4.js'></script>
-    <script type='text/javascript' src='../../../toolbar.qodeinteractive.com/_qode_toolbar/assets/js/jquery.lazy.mind252.js?ver=4.0.26'></script>
-    <script type='text/javascript' src='../../../toolbar.qodeinteractive.com/_qode_toolbar/assets/js/qode-demos-modulesd252.js?ver=4.0.26'></script>
-    <script type='text/javascript' src='../../../toolbar.qodeinteractive.com/_qode_toolbar/assets/js/swiper.mind252.js?ver=4.0.26'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var wc_add_to_cart_params = {
-            "ajax_url": "\/bridge48\/wp-admin\/admin-ajax.php",
-            "ajax_loader_url": "\/\/demo.qodeinteractive.com\/bridge48\/wp-content\/plugins\/woocommerce\/assets\/images\/ajax-loader@2x.gif",
-            "i18n_view_cart": "View Cart",
-            "cart_url": "https:\/\/demo.qodeinteractive.com\/bridge48\/cart\/",
-            "is_cart": "",
-            "cart_redirect_after_add": "no"
-        };
-        var wc_add_to_cart_params = {
-            "ajax_url": "\/bridge48\/wp-admin\/admin-ajax.php",
-            "ajax_loader_url": "\/\/demo.qodeinteractive.com\/bridge48\/wp-content\/plugins\/woocommerce\/assets\/images\/ajax-loader@2x.gif",
-            "i18n_view_cart": "View Cart",
-            "cart_url": "https:\/\/demo.qodeinteractive.com\/bridge48\/cart\/",
-            "is_cart": "",
-            "cart_redirect_after_add": "no"
-        };
-        /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js'></script>
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var woocommerce_params = {
-            "ajax_url": "\/bridge48\/wp-admin\/admin-ajax.php",
-            "ajax_loader_url": "\/\/demo.qodeinteractive.com\/bridge48\/wp-content\/plugins\/woocommerce\/assets\/images\/ajax-loader@2x.gif"
-        };
-        var woocommerce_params = {
-            "ajax_url": "\/bridge48\/wp-admin\/admin-ajax.php",
-            "ajax_loader_url": "\/\/demo.qodeinteractive.com\/bridge48\/wp-content\/plugins\/woocommerce\/assets\/images\/ajax-loader@2x.gif"
-        };
-        /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js'></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var wc_cart_fragments_params = {
-            "ajax_url": "\/bridge48\/wp-admin\/admin-ajax.php",
-            "fragment_name": "wc_fragments"
-        };
-        var wc_cart_fragments_params = {
-            "ajax_url": "\/bridge48\/wp-admin\/admin-ajax.php",
-            "fragment_name": "wc_fragments"
-        };
-        /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var qodeLike = {
-            "ajaxurl": "https:\/\/demo.qodeinteractive.com\/bridge48\/wp-admin\/admin-ajax.php"
-        };
-        /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/qode-like.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/plugins.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/jquery.carouFredSel-6.2.1.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/lemmon-slider.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/jquery.fullPage.min.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/jquery.mousewheel.min.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/jquery.touchSwipe.min.js'></script>
-    <script type='text/javascript' src='../wp-content/plugins/js_composer/assets/lib/isotope/dist/isotope.pkgd.min.js'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var no_ajax_obj = {
-            "no_ajax_pages": ["https:\/\/demo.qodeinteractive.com\/bridge48\/shop\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/cart\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/checkout\/", false, false, "index.html\/\/demo.qodeinteractive.com\/bridge48\/my-account\/", false, false, "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/sunglasses-case\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/madrid-weekend-bag\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/leather-vanity-case\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/tablet-sleeve\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/leather-weekend-bag\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/vintage-handbag\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/travel-leather-bag\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/vintage-travel-bag\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/smartphone-cover\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/leather-briefcase\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/laptop-leather-sleeve\/", "index.html\/\/demo.qodeinteractive.com\/bridge48\/product\/leather-wallet\/", "", "https:\/\/demo.qodeinteractive.com\/bridge48\/wp-login.php?action=logout&_wpnonce=d9750e488d"]
-        };
-        /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/default_dynamic.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/default.min.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/custom_js.js'></script>
-    <script type='text/javascript' src='../wp-includes/js/comment-reply.min.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/ajax.min.js'></script>
-    <script type='text/javascript' src='../wp-content/plugins/js_composer/assets/js/js_composer_front.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/toolbar.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/woocommerce.js'></script>
-    <script type='text/javascript' src='../wp-content/themes/bridge/js/select2.min.js'></script>
-</body>
 
-<!-- Mirrored from demo.qodeinteractive.com/bridge48/contact/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Sep 2020 10:10:27 GMT -->
+<script>
+  (function() {
+    fabric.util.addListener(fabric.window, 'load', function() {
+      var canvas = this.__canvas || this.canvas,
+          canvases = this.__canvases || this.canvases;
 
+      canvas && canvas.calcOffset && canvas.calcOffset();
+
+      if (canvases && canvases.length) {
+        for (var i = 0, len = canvases.length; i < len; i++) {
+          canvases[i].calcOffset();
+        }
+      }
+    });
+  })();
+</script>
+
+
+  </body>
 </html>
-<!--
-Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
-
-Object Caching 0/359 objects using disk
-Page Caching using disk: enhanced 
-
-Served from: demo.qodeinteractive.com @ 2019-07-08 20:23:40 by W3 Total Cache
--->
